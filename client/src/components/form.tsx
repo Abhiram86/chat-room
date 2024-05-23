@@ -1,5 +1,3 @@
-import { userdatatype } from "../api/auth";
-
 type FormProps = {
   name: string;
   password: string;
