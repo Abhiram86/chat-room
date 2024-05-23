@@ -13,7 +13,7 @@ import { Server } from "socket.io";
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://chat-room-cf9f.vercel.app/",
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   })
 );
@@ -24,7 +24,7 @@ dotenv.config();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: "https://chat-room-cf9f.vercel.app/",
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   },
 });
@@ -43,6 +43,12 @@ mongoose
   .catch((err) => {
     console.log("mongodb not connected error is ", err);
   });
+
+app.get("/", (req, res) => {
+  res.json(
+    "this is the backend for chat-room website running at https://chat-room-cf9f.vercel.app/"
+  );
+});
 
 app.post("/roomdetails", async (req, res) => {
   try {

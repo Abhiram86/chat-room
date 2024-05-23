@@ -16,7 +16,7 @@ export type messagetype = {
   _id: string;
 };
 
-const SOCKER_URL = "http://localhost:3001";
+const SOCKER_URL = "https://chat-room-ivory.vercel.app/";
 
 export const socket = io(SOCKER_URL);
 
