@@ -13,7 +13,7 @@ import { Server } from "socket.io";
 const app = express();
 app.use(
   cors({
-    origin: "https://chat-room-cf9f.vercel.app/",
+    origin: "https://chat-room-cf9f.vercel.app",
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   })
 );
@@ -24,7 +24,7 @@ dotenv.config();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "https://chat-room-cf9f.vercel.app/",
+    origin: "https://chat-room-cf9f.vercel.app",
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   },
 });
