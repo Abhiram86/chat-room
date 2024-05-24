@@ -13,7 +13,7 @@ import { Server } from "socket.io";
 const app = express();
 app.use(
   cors({
-    origin: "https://chat-room-cf9f.vercel.app/",
+    origin: "https://chat-room-cf9f.vercel.app",
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   })
 );
@@ -32,7 +32,7 @@ const io = new Server(server, {
 app.use("/auth", auth);
 app.use("/room", room);
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 const DB_URL = process.env.DATABASE_URL;
 
 mongoose
